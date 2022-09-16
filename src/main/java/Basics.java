@@ -7,6 +7,8 @@
  * relevant readings for each task.
  */
 
+import java.awt.desktop.SystemEventListener;
+
 /**
  *  1. In Java, no code can exist outside of a class. Unlike Python which uses
  *    functions, all code in Java uses methods.
@@ -44,8 +46,6 @@ public class Basics {
          *                Hello World!
          */
         System.out.println("Hello World!");
-
-
         /* 4. In Python, we could declare variables using a simple assignment
          *    statement. For example:
          *        x = 10
@@ -146,13 +146,15 @@ public class Basics {
 
         // Fill in the rest of the body here
         String[] a;
-        a = to_split.split("");
-        for (int j = 0; j <= to_split.length(); j++){
-            ret.append(a[j].charAt(0));
+        a = to_split.split(" ");
+        for (int j = 0; j <= a.length - 1; j++){
+            char c;
+            c = a[j].charAt(0);
+            ret.append(c);
         }
         return ret.toString();
-    }
 
+    }
     /**
      * 7. Below is a method that takes in an integer array (similar to a list
      *    of integers). The method's name is 'oddSum' and it returns an int
@@ -176,7 +178,7 @@ public class Basics {
          *                You can index into arrays as we do in Python
          *                (e.g. arr[i] gives you the item at index i).
          */
-        for(int i = 1; i<= arr.length; i = i+ 2){
+        for(int i = 0; i<= arr.length - 1; i = i+ 2){
             current_sum = current_sum + i;
         }
         return current_sum;
